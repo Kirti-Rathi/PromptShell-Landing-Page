@@ -24,11 +24,12 @@ import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
+import { LineShadowText } from "../magicui/line-shadow-text";
+import { Check, Copy } from "lucide-react";
 
 export const MacbookScroll = ({
   src,
   showGradient,
-  title,
   badge,
 }: {
   src?: string;
@@ -79,24 +80,96 @@ export const MacbookScroll = ({
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
+  const [installCopied, setInstallCopied] = useState(false);
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+
+      setInstallCopied(true);
+      setTimeout(() => setInstallCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
   return (
     <div
       ref={ref}
-      className="min-h-[280vh] flex flex-col items-center py-0 md:py-80 justify-start shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
+      className="min-h-[290vh] flex flex-col items-center py-25 justify-start shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
     >
       <motion.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="dark:text-white text-neutral-800 text-3xl font-bold mb-20 text-center"
+        className="dark:text-white text-neutral-800 text-6xl font-semibold text-center"
       >
-        {title || (
-          <span>
-            This Macbook is built with Tailwindcss. <br /> No kidding.
+        <span>
+          Your <LineShadowText className="italic">Smart</LineShadowText>{" "}
+          Terminal Assistant
+          <br />
+          <span className="text-3xl text-foreground/70">
+            Making Command Line Tasks Effortless and Secure
           </span>
-        )}
+        </span>
       </motion.h2>
+
+      {/* Script Copy Button */}
+      <motion.div
+        style={{
+          translateY: textTransform,
+          opacity: textOpacity,
+        }}
+        className="p-4 font-mono mt-10 mb-10 bg-foreground text-background w-sm text-sm border rounded-lg relative"
+      >
+        <div className="flex items-start">
+          <span className="text-[#27c93f] mr-2">$</span>
+          pip install promptshell
+        </div>
+        <button
+          onClick={() => copyToClipboard("pip install promptshell")}
+          className="cursor-pointer text-gray-400 hover:text-white rounded transition-colors absolute top-1/2 -translate-y-1/2 right-4"
+          aria-label={installCopied ? "Copied" : "Copy to clipboard"}
+        >
+          {installCopied ? (
+            <Check className="w-5 h-5" />
+          ) : (
+            <Copy className="w-5 h-5" />
+          )}
+        </button>
+      </motion.div>
+
+      {/* Platform Icons */}
+      <motion.div
+        style={{
+          translateY: textTransform,
+          opacity: textOpacity,
+        }}
+        className="flex justify-center items-center gap-6 mb-20"
+      >
+        <Image
+          src="/platform-icons/windows.png"
+          alt="Windows"
+          width={120}
+          height={120}
+          className="text-gray-400 hover:text-white transition-colors"
+        />
+        <Image
+          src="/platform-icons/linux.png"
+          alt="Linux"
+          width={100}
+          height={100}
+          className="text-gray-400 hover:text-white transition-colors"
+        />
+        <Image
+          src="/platform-icons/macos.png"
+          alt="macOS"
+          width={60}
+          height={60}
+          className="text-gray-400 hover:text-white transition-colors"
+        />
+      </motion.div>
+
       {/* Lid */}
       <Lid
         src={src}

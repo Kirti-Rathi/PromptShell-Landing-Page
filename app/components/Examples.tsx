@@ -24,34 +24,40 @@ const Examples = () => {
 
   const features = [
     {
-      title: "Simple Agent Workflow",
+      title: "Natural Language Commands",
       description: "Create a basic AI agent workflow with multiple agents.",
     },
     {
-      title: "Multi-Agent Collaboration",
+      title: "Ask Questions, Run Commands Directly and Ensure Secure Execution",
       description:
         "Set up multiple AI agents to work together on a complex task.",
     },
     {
-      title: "Tool Integration",
+      title: "Seamless Integration with Git, Docker, and Developer Tools",
       description:
         "Integrate external tools and APIs into an AI agent workflow.",
     },
     {
-      title: "Customizable Agent Behavior",
+      title:
+        "Generate Code Snippets Using Prompts and Save Directly to Desired Locations",
       description:
         "Design a specialized AI agent with custom decision-making logic.",
     },
   ];
 
   const terminalCode = [
-    `import { Swarm, Agent } from 'ai-agent-sdk';
+    `$ make 2 .js and 3 .txt files
+? Do you want to run the command 'type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul >
+file2.txt && type nul > file3.txt'? Yes
+Command: type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul > file2.txt && type nul > file3.txt
 
-const client = new Swarm();
-const agent = new Agent({
-  name: "Basic Agent",
-  instructions: "Complete simple tasks"
-});`,
+$ backup add .txt files to a folder named backup
+? Do you want to run the command 'mkdir backup && copy *.txt backup\'? Yes
+Command: mkdir backup && copy *.txt backup\
+file1.txt
+file2.txt
+file3.txt
+3 file(s) copied.`,
     `import { Swarm, Agent } from 'ai-agent-sdk';
 
 const swarm = new Swarm();
@@ -103,13 +109,13 @@ const agent = new Agent({
                   setActiveTab(index);
                   setProgress(0);
                 }}
-                className={`p-6 rounded-lg border cursor-pointer transition-colors duration-300 relative ${
+                className={`p-5 rounded-lg border cursor-pointer transition-colors duration-300 relative ${
                   activeTab === index
                     ? " bg-[#f8f8f8]"
                     : "border-gray-100 bg-white "
                 }`}
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-md font-semibold text-gray-900">
                   {feature.title}
                 </h3>
                 {/* <p className="text-gray-600">{feature.description}</p> */}

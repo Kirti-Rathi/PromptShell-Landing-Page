@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronsDown } from "lucide-react";
 
 interface ConfigurationSetupProps {
   className?: string;
@@ -29,7 +30,7 @@ const ConfigurationSetup = ({ className = "" }: ConfigurationSetupProps) => {
   ];
 
   return (
-    <div className={`max-w-4xl mx-auto mt-5 mb-5 bg-white ${className}`}>
+    <div className={`max-w-4xl py-18 mx-auto mt-5 mb-5 bg-white ${className}`}>
       <h3 className="text-4xl text-center font-bold mb-3">
         <span
           style={{
@@ -41,7 +42,16 @@ const ConfigurationSetup = ({ className = "" }: ConfigurationSetupProps) => {
         </span>
         Interactive Configuration Setup
       </h3>
-      <div className={"mt-5 mb-5 bg-white p-6 rounded-xl shadow-sm"}>
+      <div className="text-center mt-6">
+        <p className="text-lg text-gray-700 font-semibold">
+          Try it out right here!
+        </p>
+        <ChevronsDown className="mx-auto mt-2 w-6 h-6 text-gray-600 animate-bounce" />
+      </div>
+
+      <div
+        className={"mb-10 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl"}
+      >
         <div className="rounded-lg overflow-hidden bg-[#1e1e1e] shadow-lg">
           {/* Terminal Header */}
           <div className="bg-[#2d2d2d] px-6 py-3 flex items-center">
@@ -61,7 +71,9 @@ const ConfigurationSetup = ({ className = "" }: ConfigurationSetupProps) => {
 
             {/* Operation Mode Selection */}
             <div className="mb-6">
-              <div className="text-gray-400 mb-2">? Select operation mode:</div>
+              <div className="text-gray-400 animate-pulse mb-2">
+                ? Select operation mode:
+              </div>
               <div className="space-y-1">
                 {["local", "api"].map((mode) => (
                   <div
@@ -90,7 +102,7 @@ const ConfigurationSetup = ({ className = "" }: ConfigurationSetupProps) => {
             {/* Model Selection - Local */}
             {configStep >= 2 && operationMode === "local" && (
               <div className="mb-6">
-                <div className="text-gray-400 mb-2">
+                <div className="text-gray-400 animate-pulse mb-2">
                   ? Choose local model: # displays installed ollama models
                 </div>
                 <div className="space-y-1">
@@ -118,7 +130,7 @@ const ConfigurationSetup = ({ className = "" }: ConfigurationSetupProps) => {
             {/* API Provider Selection */}
             {configStep >= 2 && operationMode === "api" && (
               <div className="mb-6">
-                <div className="text-gray-400 mb-2">
+                <div className="text-gray-400 animate-pulse mb-2">
                   ? API provider selection:
                 </div>
                 <div className="space-y-1">

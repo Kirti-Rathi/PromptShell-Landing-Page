@@ -1,63 +1,89 @@
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-
 import {
-  IconArrowWaveRightUp,
-  IconBoxAlignTopLeft,
-  IconBoxAlignRightFilled,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
+  // Terminal,
+  Globe,
+  Bot,
+  Lock,
+  Target,
+  AlertTriangle,
+  Wrench,
+  ArrowRightToLine,
+  // Command,
+  // GitFork,
+} from "lucide-react";
 
 export default function Features() {
   const Skeleton = () => (
     <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
   );
   const items = [
+    // {
+    //   title: "Natural Language to Shell Commands",
+    //   description:
+    //     "Converts plain English queries into accurate shell commands.",
+    //   header: <Skeleton />,
+    //   icon: <Terminal className="h-4 w-4 text-blue-500" />,
+    // },
     {
-      title: "The Dawn of Innovation",
-      description: "Explore the birth of groundbreaking ideas and inventions.",
+      title: "Cross-Platform Compatibility",
+      description: "Works seamlessly across Windows, Linux, and macOS.",
       header: <Skeleton />,
-      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+      icon: <Globe className="h-6 w-6 text-blue-600" />,
     },
     {
-      title: "The Digital Revolution",
-      description: "Dive into the transformative power of technology.",
-      header: <Skeleton />,
-      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-    },
-    {
-      title: "The Art of Design",
-      description: "Discover the beauty of thoughtful and functional design.",
-      header: <Skeleton />,
-      icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-    },
-    {
-      title: "The Power of Communication",
+      title: "Hybrid AI-Model Support",
       description:
-        "Understand the impact of effective communication in our lives.",
+        "Supports both local (Ollama) and cloud-based (Groq, OpenAI, Google, etc.) LLMs for flexibility.",
       header: <Skeleton />,
-      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+      icon: <Bot className="h-6 w-6 text-purple-500" />,
     },
     {
-      title: "The Pursuit of Knowledge",
-      description: "Join the quest for understanding and enlightenment.",
+      title: "Privacy-First Approach",
+      description:
+        "Defaults to local models and runs completely offline, so that no data leaves your device unless you enable cloud APIs.",
       header: <Skeleton />,
-      icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
+      icon: <Lock className="h-6 w-6 text-green-500" />,
     },
     {
-      title: "The Joy of Creation",
-      description: "Experience the thrill of bringing ideas to life.",
+      title: "Context-Aware Execution",
+      description:
+        "Remembers command history, tracks files, and adapts suggestions accordingly.",
       header: <Skeleton />,
-      icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
+      icon: <Target className="h-6 w-6 text-indigo-500" />,
     },
     {
-      title: "The Spirit of Adventure",
-      description: "Embark on exciting journeys and thrilling discoveries.",
+      title: "Secure Command Execution",
+      description: "Blocks dangerous commands and asks for confirmation.",
       header: <Skeleton />,
-      icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+      icon: <AlertTriangle className="h-6 w-6 text-amber-500" />,
     },
+    {
+      title: "Intelligent Debugging & Auto-Correction",
+      description:
+        "Identifies error, autonomously debugs issues and suggests corrected command.",
+      header: <Skeleton />,
+      icon: <Wrench className="h-6 w-6 text-orange-500" />,
+    },
+    {
+      title: "Smart Autocompletion",
+      description:
+        "Provides tab completions for files and folder present in working directory.",
+      header: <Skeleton />,
+      icon: <ArrowRightToLine className="h-6 w-6 text-cyan-500" />,
+    },
+    // {
+    //   title: "Direct Execution & Queries",
+    //   description:
+    //     "Directly execute shell commands with '!' (e.g., !ls -la), or Ask shell-related questions using '?' (e.g., How do I create a new SSH key?).",
+    //   header: <Skeleton />,
+    //   icon: <Command className="h-4 w-4 text-violet-500" />,
+    // },
+    // {
+    //   title: "Built-in Support for Git, Docker, and Dev Tools",
+    //   description: "Seamlessly understands and executes commands.",
+    //   header: <Skeleton />,
+    //   icon: <GitFork className="h-4 w-4 text-rose-500" />,
+    // },
   ];
   return (
     <BentoGrid className="max-w-4xl mx-auto">

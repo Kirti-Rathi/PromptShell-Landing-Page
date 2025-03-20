@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @plugin "tailwindcss-animate";
 
@@ -119,5 +124,28 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  code,
+  pre,
+  .console {
+    font-family: "Consolas", monospace;
+  }
+}
+
+/* Add this near the end of the file, after the @layer base section */
+
+.animate-line-shadow {
+  animation: line-shadow 8s linear infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes line-shadow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
   }
 }

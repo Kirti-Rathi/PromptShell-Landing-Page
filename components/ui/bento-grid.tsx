@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { LineShadowText } from "../magicui/line-shadow-text";
 
 export const BentoGrid = ({
   className,
@@ -21,6 +22,7 @@ export const BentoGrid = ({
             {">"}_{" "}
           </span>{" "}
           Features
+          {/* <LineShadowText className="italic">Features</LineShadowText> */}
         </h2>
         {/* <p className="text-gray-600">
           Get started instantly with just one command - copy, paste, and
