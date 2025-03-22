@@ -22,7 +22,7 @@ export default function CTA() {
           </svg>
         </Link>
         <p className="text-3xl relative z-10 tracking-tight">
-          Proudly open-sourced
+          Proudly Open-Sourced
         </p>
         <p className="mt-1 relative z-10 max-w-2xl mx-auto text-md text-gray-300">
           Get started with our documentation.

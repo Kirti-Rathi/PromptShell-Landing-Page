@@ -18,15 +18,15 @@ export default function Footer() {
           </LinkPreview>
         </span>
 
-        <span className="relative z-10">
-          {" | "} Designed and developed by{" "}
+        <span className="relative z-50">
           <LinkPreview
             url="https://www.linkedin.com/in/kirti-rathi/"
             imageSrc="/linkedin.jpg"
             isStatic
-            className="italic relative z-50 hover:font-medium transition-all duration-200 ease-in-out"
+            className="relative z-50"
           >
-            Kirti Rathi
+            {" | "} Designed and Developed by{" "}
+            <span className="italic">Kirti Rathi</span>
           </LinkPreview>
         </span>
       </div>

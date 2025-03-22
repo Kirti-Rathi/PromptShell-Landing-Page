@@ -135,17 +135,17 @@
 }
 
 .animate-glow {
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 6px rgba(0, 255, 0, 0.2), 0 0 16px rgba(0, 255, 0, 0.2),
-      0 0 30px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.1), 0 0 10px rgba(0, 255, 0, 0.1),
+      0 0 10px rgba(0, 255, 0, 0.1);
   }
   to {
-    box-shadow: 0 0 16px rgba(0, 255, 0, 0.3), 0 0 32px rgba(0, 255, 0, 0.3),
-      0 0 48px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 18px rgba(0, 255, 0, 0.3), 0 0 18px rgba(0, 255, 0, 0.3),
+      0 0 18px rgba(0, 255, 0, 0.3);
   }
 }
 

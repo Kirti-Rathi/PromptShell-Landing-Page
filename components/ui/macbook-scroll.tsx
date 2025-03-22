@@ -125,6 +125,7 @@ export const MacbookScroll = ({
           translateY: textTransform,
           opacity: textOpacity,
         }}
+        whileHover={{ y: -7, transition: { duration: 0.3 } }}
         className="px-4 py-3 font-mono mt-10 mb-25 bg-foreground text-background w-sm text-sm border rounded-lg relative animate-glow"
       >
         <div className="flex items-start">
