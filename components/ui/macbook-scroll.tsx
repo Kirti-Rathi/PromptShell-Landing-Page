@@ -26,6 +26,7 @@ import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import { LineShadowText } from "../magicui/line-shadow-text";
 import { Check, Copy } from "lucide-react";
+import { TypingAnimation } from "../magicui/typing-animation";
 
 export const MacbookScroll = ({
   src,
@@ -95,7 +96,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[290vh] flex flex-col items-center py-25 justify-start shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
+      className="min-h-[290vh] flex flex-col items-center py-50 justify-start shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
     >
       <motion.h2
         style={{
@@ -105,12 +106,16 @@ export const MacbookScroll = ({
         className="dark:text-white text-neutral-800 text-6xl font-semibold text-center"
       >
         <span>
-          Your <LineShadowText className="italic">Smart</LineShadowText>{" "}
-          Terminal Assistant
-          <br />
-          <span className="text-3xl text-foreground/70">
-            Making Command Line Tasks Effortless and Secure
-          </span>
+          <LineShadowText className="italic">Your</LineShadowText>{" "}
+          <LineShadowText className="italic">Smart</LineShadowText>{" "}
+          <LineShadowText className="italic">Terminal</LineShadowText>{" "}
+          <LineShadowText className="italic">Assistant</LineShadowText>
+          <TypingAnimation
+            duration={70}
+            className="text-2xl text-foreground/40 font-thin mt-4 block"
+          >
+            Making Command-Line Tasks Effortless and Secure!
+          </TypingAnimation>
         </span>
       </motion.h2>
 
@@ -120,7 +125,7 @@ export const MacbookScroll = ({
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="p-4 font-mono mt-10 mb-10 bg-foreground text-background w-sm text-sm border rounded-lg relative"
+        className="px-4 py-3 font-mono mt-10 mb-25 bg-foreground text-background w-sm text-sm border rounded-lg relative animate-glow"
       >
         <div className="flex items-start">
           <span className="text-[#27c93f] mr-2">$</span>
@@ -140,7 +145,7 @@ export const MacbookScroll = ({
       </motion.div>
 
       {/* Platform Icons */}
-      <motion.div
+      {/* <motion.div
         style={{
           translateY: textTransform,
           opacity: textOpacity,
@@ -148,27 +153,27 @@ export const MacbookScroll = ({
         className="flex justify-center items-center gap-6 mb-20"
       >
         <Image
-          src="/platform-icons/windows.png"
+          src="/platform-icons/windows-modified.png"
           alt="Windows"
           width={120}
           height={120}
           className="text-gray-400 hover:text-white transition-colors"
         />
         <Image
-          src="/platform-icons/linux.png"
+          src="/platform-icons/linux-modified.png"
           alt="Linux"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           className="text-gray-400 hover:text-white transition-colors"
         />
         <Image
-          src="/platform-icons/macos.png"
+          src="/platform-icons/macos-modified.png"
           alt="macOS"
-          width={60}
-          height={60}
+          width={50}
+          height={50}
           className="text-gray-400 hover:text-white transition-colors"
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* Lid */}
       <Lid

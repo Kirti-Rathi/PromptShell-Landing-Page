@@ -32,6 +32,7 @@ const Installation = () => {
               textShadow:
                 "0 2px 4px #4b5563, 0 0 8px #6b728080, 2px 4px 12px #9ca3af40",
             }}
+            className="text-3xl"
           >
             {">"}_{" "}
           </span>

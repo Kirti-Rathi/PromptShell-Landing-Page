@@ -134,7 +134,20 @@
   }
 }
 
-/* Add this near the end of the file, after the @layer base section */
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 6px rgba(0, 255, 0, 0.2), 0 0 16px rgba(0, 255, 0, 0.2),
+      0 0 30px rgba(0, 255, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 0 16px rgba(0, 255, 0, 0.3), 0 0 32px rgba(0, 255, 0, 0.3),
+      0 0 48px rgba(0, 255, 0, 0.3);
+  }
+}
 
 .animate-line-shadow {
   animation: line-shadow 8s linear infinite;
@@ -148,4 +161,38 @@
   100% {
     background-position: 100% 100%;
   }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee[class*="[animation-direction:reverse]"] {
+  animation-direction: reverse;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical[class*="[animation-direction:reverse]"] {
+  animation-direction: reverse;
 }

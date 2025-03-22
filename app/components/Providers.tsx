@@ -7,16 +7,17 @@ export default function Providers() {
     <section className="max-w-4xl mx-auto py-8 md:py-16 lg:py-24">
       <div className="container">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <h2 className="text-4xl font-bold tracking-tighter ">
+          <h2 className="text-4xl font-bold flex items-center gap-2">
             <span
               style={{
                 textShadow:
                   "0 2px 4px #4b5563, 0 0 8px #6b728080, 2px 4px 12px #9ca3af40",
               }}
+              className="text-3xl"
             >
               {">"}_{" "}
             </span>
-            Supported Platforms
+            Supported Providers
           </h2>
           <div className="w-full max-w-[900px] grid gap-8 mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">

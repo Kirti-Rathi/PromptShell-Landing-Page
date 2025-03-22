@@ -10,7 +10,7 @@ interface LineShadowTextProps
 
 export function LineShadowText({
   children,
-  shadowColor = "black",
+  shadowColor = "#3CB371",
   className,
   as: Component = "span",
   ...props
@@ -26,12 +26,13 @@ export function LineShadowText({
     <MotionComponent
       style={{ "--shadow-color": shadowColor } as React.CSSProperties}
       className={cn(
-        "relative z-0 inline-flex",
-        "after:absolute after:left-[0.04em] after:top-[0.04em] after:content-[attr(data-text)]",
+        "relative z-0 inline-flex text-shadow-glow",
+        "after:absolute after:left-[0.06em] after:top-[0.06em] after:content-[attr(data-text)]",
         "after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]",
         "after:-z-10 after:bg-[length:0.06em_0.06em] after:bg-clip-text after:text-transparent",
         "after:animate-[line-shadow_15s_linear_infinite] after:bg-[0_0]",
         "[&:after]:motion-safe:animate-[line-shadow_15s_linear_infinite]",
+        "[&]:text-shadow-[0_0_10px_var(--shadow-color)]",
         "@keyframes line-shadow { from { background-position: 0 0 } to { background-position: 100% -100% } }",
         className
       )}

@@ -47,7 +47,7 @@ const Examples = () => {
 
   const terminalCode = [
     `$ make 2 .js and 3 .txt files
-? Do you want to run the command 'type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul >
+Do you want to run the command 'type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul >
 file2.txt && type nul > file3.txt'? Yes
 Command: type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul > file2.txt && type nul > file3.txt
 
@@ -84,17 +84,18 @@ const agent = new Agent({
   return (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">
+        <div className="mb-8 text-center">
+          <h2 className="text-4xl font-bold mb-4 flex items-center justify-center gap-2">
             <span
               style={{
                 textShadow:
                   "0 2px 4px #4b5563, 0 0 8px #6b728080, 2px 4px 12px #9ca3af40",
               }}
+              className="text-3xl"
             >
               {">"}_{" "}
             </span>
-            Explore Our Features
+            See PromptShell in Action
           </h2>
           <p className="text-xl text-gray-600">
             Discover how our platform can transform your AI development workflow

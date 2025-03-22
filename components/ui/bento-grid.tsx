@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { LineShadowText } from "../magicui/line-shadow-text";
 
 export const BentoGrid = ({
   className,
@@ -11,18 +10,18 @@ export const BentoGrid = ({
 }) => {
   return (
     <div id="features" className="pt-20 pb-20">
-      <div className="text-center mb-8">
+      <div className="text-center  mb-8">
         <h2 className="text-4xl font-bold mb-4">
           <span
             style={{
               textShadow:
                 "0 2px 4px #4b5563, 0 0 8px #6b728080, 2px 4px 12px #9ca3af40",
             }}
+            className="text-3xl"
           >
             {">"}_{" "}
-          </span>{" "}
+          </span>
           Features
-          {/* <LineShadowText className="italic">Features</LineShadowText> */}
         </h2>
         {/* <p className="text-gray-600">
           Get started instantly with just one command - copy, paste, and
@@ -58,7 +57,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
+        "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-white shadow-md p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
         className
       )}
     >
