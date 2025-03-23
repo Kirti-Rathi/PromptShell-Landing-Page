@@ -241,8 +241,14 @@ export const Lid = ({
           }}
           className="absolute inset-0 bg-[#010101] rounded-lg flex items-center justify-center"
         >
-          <span className="text-white">
-            <AceternityLogo />
+          <span
+            style={{
+              textShadow:
+                "0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF0080, 0 0 40px #00FF0040",
+            }}
+            className="text-2xl font-bold text-background"
+          >
+            {">"}_
           </span>
         </div>
       </div>
@@ -736,23 +742,23 @@ export const OptionKey = ({ className }: { className: string }) => {
   );
 };
 
-const AceternityLogo = () => {
-  return (
-    <svg
-      width="66"
-      height="65"
-      viewBox="0 0 66 65"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-3 w-3 text-white"
-    >
-      <path
-        d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
-        stroke="currentColor"
-        strokeWidth="15"
-        strokeMiterlimit="3.86874"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-};
+// const AceternityLogo = () => {
+//   return (
+//     <svg
+//       width="66"
+//       height="65"
+//       viewBox="0 0 66 65"
+//       fill="none"
+//       xmlns="http://www.w3.org/2000/svg"
+//       className="h-3 w-3 text-white"
+//     >
+//       <path
+//         d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
+//         stroke="currentColor"
+//         strokeWidth="15"
+//         strokeMiterlimit="3.86874"
+//         strokeLinecap="round"
+//       />
+//     </svg>
+//   );
+// };
