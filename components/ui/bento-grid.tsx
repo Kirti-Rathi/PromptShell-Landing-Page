@@ -10,7 +10,7 @@ export const BentoGrid = ({
 }) => {
   return (
     <div id="features" className="pt-20 pb-20">
-      <div className="text-center  mb-8">
+      <div className="text-center mb-8">
         <h2 className="text-4xl font-bold mb-4">
           <span
             style={{
@@ -23,10 +23,10 @@ export const BentoGrid = ({
           </span>
           Features
         </h2>
-        {/* <p className="text-gray-600">
-          Get started instantly with just one command - copy, paste, and
-          you&apos;re ready to go!
-        </p> */}
+        <p className="text-gray-400">
+          Experience a powerful shell assistant designed to enhance your
+          command-line workflow.
+        </p>
       </div>
 
       <div
@@ -57,7 +57,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-white shadow-md p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
+        "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-100 bg-white shadow-md p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
         className
       )}
     >

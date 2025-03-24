@@ -120,9 +120,9 @@ print("File renaming completed!")' > rename.py'? Yes`,
             </span>
             PromptShell in Action
           </h2>
-          <p className="text-gray-600">
-            See how it makes your development tasks easier with AI-powered
-            commands
+          <p className="text-gray-400">
+            See how PromptShell makes your development tasks easier with
+            AI-powered commands
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -136,10 +136,10 @@ print("File renaming completed!")' > rename.py'? Yes`,
                 }}
                 onMouseEnter={() => activeTab === index && setIsHovered(true)}
                 onMouseLeave={() => activeTab === index && setIsHovered(false)}
-                className={`p-5 rounded-md border cursor-pointer transition-colors duration-300 relative ${
+                className={`p-5 rounded-md bg-background border cursor-pointer transition-colors duration-300 relative ${
                   activeTab === index
-                    ? "border-gray-300 bg-[#f8f8f8] shadow-[0_0_15px_rgba(156,156,156,0.5)] shadow-[#9c9c9c]"
-                    : "border-gray-200 bg-white opacity-50"
+                    ? "border-gray-300 shadow-[0_0_8px_rgba(156,156,156,0.5)] shadow-[#9c9c9c80]"
+                    : "border-gray-200 opacity-50 hover:opacity-70"
                 }`}
               >
                 <h3 className="text-md font-semibold text-gray-900">

@@ -25,7 +25,7 @@ const Installation = () => {
 
   return (
     <div id="installation" className="w-full max-w-4xl mx-auto py-10">
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h2 className="text-4xl font-bold mb-4">
           <span
             style={{
@@ -38,13 +38,13 @@ const Installation = () => {
           </span>
           Installation Guide
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-400">
           Get started instantly with just one command - copy, paste, and
           you&apos;re ready to go!
         </p>
       </div>
       {/* Installation Steps */}
-      <div className="w-full bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+      <div className="w-full border border-gray-100 bg-background p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
         <h3 className="text-2xl font-semibold mb-3">Choose Platform</h3>
         {/* Tab Headers */}
         <div className="grid w-full grid-cols-2 rounded-md bg-gray-100 shadow-sm p-1">
@@ -113,7 +113,7 @@ const Installation = () => {
         </div>
       </div>
       {/* Run PromptShell */}
-      <div className="w-full mt-5 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+      <div className="w-full border border-gray-100 mt-5 bg-background p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
         <h3 className="text-2xl font-semibold mb-3">Run PromptShell</h3>
         <div className=" rounded-lg overflow-hidden bg-[#1e1e1e] shadow-lg">
           {/* Terminal Header */}

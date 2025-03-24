@@ -51,7 +51,9 @@ const ConfigurationSetup = ({ className = "" }: ConfigurationSetupProps) => {
       </div>
 
       <div
-        className={"mb-10 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl"}
+        className={
+          "mb-10 border border-gray-100 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out"
+        }
       >
         <div className="rounded-lg overflow-hidden bg-[#1e1e1e] shadow-lg">
           {/* Terminal Header */}

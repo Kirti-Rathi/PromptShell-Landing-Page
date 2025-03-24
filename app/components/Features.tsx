@@ -17,13 +17,6 @@ export default function Features() {
     <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
   );
   const items = [
-    // {
-    //   title: "Natural Language to Shell Commands",
-    //   description:
-    //     "Converts plain English queries into accurate shell commands.",
-    //   header: <Skeleton />,
-    //   icon: <Terminal className="h-4 w-4 text-blue-500" />,
-    // },
     {
       title: "Cross-Platform Compatibility",
       description: "Works seamlessly across Windows, Linux, and macOS.",
@@ -58,32 +51,19 @@ export default function Features() {
       icon: <AlertTriangle className="h-6 w-6 text-amber-500" />,
     },
     {
-      title: "Intelligent Debugging & Auto-Correction",
-      description:
-        "Identifies error, autonomously debugs issues and suggests corrected command.",
-      header: <Skeleton />,
-      icon: <Wrench className="h-6 w-6 text-orange-500" />,
-    },
-    {
       title: "Smart Autocompletion",
       description:
         "Provides tab completions for files and folder present in working directory.",
       header: <Skeleton />,
       icon: <ArrowRightToLine className="h-6 w-6 text-cyan-500" />,
     },
-    // {
-    //   title: "Direct Execution & Queries",
-    //   description:
-    //     "Directly execute shell commands with '!' (e.g., !ls -la), or Ask shell-related questions using '?' (e.g., How do I create a new SSH key?).",
-    //   header: <Skeleton />,
-    //   icon: <Command className="h-4 w-4 text-violet-500" />,
-    // },
-    // {
-    //   title: "Built-in Support for Git, Docker, and Dev Tools",
-    //   description: "Seamlessly understands and executes commands.",
-    //   header: <Skeleton />,
-    //   icon: <GitFork className="h-4 w-4 text-rose-500" />,
-    // },
+    {
+      title: "Intelligent Debugging & Auto-Correction",
+      description:
+        "Identifies error, autonomously debugs issues and suggests corrected command.",
+      header: <Skeleton />,
+      icon: <Wrench className="h-6 w-6 text-orange-500" />,
+    },
   ];
   return (
     <BentoGrid className="max-w-4xl mx-auto">

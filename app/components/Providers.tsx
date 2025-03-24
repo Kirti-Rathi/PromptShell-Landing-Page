@@ -19,6 +19,10 @@ export default function Providers() {
             </span>
             Supported Providers
           </h2>
+          <p className="text-gray-400 text-center">
+            Choose between local processing for privacy or cloud providers for
+            enhanced capabilities
+          </p>
           <div className="w-full max-w-[900px] grid gap-8 mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               {/* Local Processing */}
