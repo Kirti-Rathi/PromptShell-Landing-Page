@@ -5,22 +5,28 @@ import { useState, useEffect } from "react";
 const Examples = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTab((prev) => (prev + 1) % features.length);
-      setProgress(0);
-    }, 3000);
+    let interval: NodeJS.Timeout;
+    let progressInterval: NodeJS.Timeout;
 
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => Math.min(prev + 1, 100));
-    }, 30);
+    if (!isHovered) {
+      interval = setInterval(() => {
+        setActiveTab((prev) => (prev + 1) % features.length);
+        setProgress(0);
+      }, 3000);
+
+      progressInterval = setInterval(() => {
+        setProgress((prev) => Math.min(prev + 1, 100));
+      }, 30);
+    }
 
     return () => {
       clearInterval(interval);
       clearInterval(progressInterval);
     };
-  }, []);
+  }, [isHovered]);
 
   const features = [
     {
@@ -47,38 +53,55 @@ const Examples = () => {
 
   const terminalCode = [
     `$ make 2 .js and 3 .txt files
-Do you want to run the command 'type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul >
+? Do you want to run the command 'type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul >
 file2.txt && type nul > file3.txt'? Yes
 Command: type nul > script1.js && type nul > script2.js && type nul > file1.txt && type nul > file2.txt && type nul > file3.txt
 
 $ backup add .txt files to a folder named backup
-? Do you want to run the command 'mkdir backup && copy *.txt backup\'? Yes
-Command: mkdir backup && copy *.txt backup\
+? Do you want to run the command 'mkdir backup && copy *.txt backup\\'? Yes
+Command: mkdir backup && copy *.txt backup\\
 file1.txt
 file2.txt
 file3.txt
 3 file(s) copied.`,
-    `import { Swarm, Agent } from 'ai-agent-sdk';
 
-const swarm = new Swarm();
-const agents = [
-  new Agent({ name: "Planner" }),
-  new Agent({ name: "Executor" })
-];`,
-    `import { Swarm, Agent, Tool } from 'ai-agent-sdk';
+    `$ how to find ssh keys?
+Answer:
+Use 'ls ~/.ssh/' (Linux/macOS) or 'ls C:\\Users\\Kirti\\.ssh/' (Windows) to list SSH keys. Example: 'ls ~/.ssh/id_rsa.pub' to view the public key. Alternatives: 'ssh-keygen -t rsa -b 4096' to generate new keys. Safety: Never share private keys (id_rsa).
 
-const agent = new Agent({
-  name: "Tool User",
-  tools: [new Calculator(), new WebSearch()]
-});`,
-    `import { Swarm, Agent } from 'ai-agent-sdk';
+$ !cd OneDrive
+Direct Command: cd OneDrive
+Changed directory to C:\\Users\\username\\OneDrive
 
-const agent = new Agent({
-  name: "Custom Agent",
-  decisionLogic: (input) => {
-    // Custom logic here
-  }
-});`,
+$ delete file1.txt
+? Do you want to run the command 'CONFIRM: del file1.txt'? Yes
+? Warning: This command may be destructive. Are you sure you want to run ' del file1.txt'? Yes
+Command:  del file1.txt`,
+
+    `$ show last 2 commits
+? Do you want to run the command 'git log -n 2'? Yes
+Command: git log -n 2
+commit b8299077fe7e17addf354d541eb71b0e2bc8ed92
+Author: unknown <kirtirathi282@gmail.com>
+Date:   Sun Mar 23 20:50:25 2025 +0530
+
+Refactor Navbar and Hero components
+
+commit 98c0b28c972d7cba7600554e5cd0ddf112b65be1
+Author: unknown <kirtirathi282@gmail.com>
+Date:   Sat Mar 22 21:06:43 2025 +0530
+
+Refactor CSS and UI components +  minor visual adjustments`,
+    `$ generate a python script to automate file renaming and save it to rename.py
+? Do you want to run the command 'echo '#!/usr/bin/env python
+import os
+# Rename all files with .txt extension to .log
+for filename in os.listdir("."):
+    if filename.endswith(".txt"):
+        os.rename(filename, filename[:-4] + ".log")
+        print(f"Renamed {filename} to {filename[:-4]}.log")
+
+print("File renaming completed!")' > rename.py'? Yes`,
   ];
 
   return (
@@ -95,10 +118,11 @@ const agent = new Agent({
             >
               {">"}_{" "}
             </span>
-            See PromptShell in Action
+            PromptShell in Action
           </h2>
-          <p className="text-xl text-gray-600">
-            Discover how our platform can transform your AI development workflow
+          <p className="text-gray-600">
+            See how it makes your development tasks easier with AI-powered
+            commands
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -110,10 +134,12 @@ const agent = new Agent({
                   setActiveTab(index);
                   setProgress(0);
                 }}
-                className={`p-5 rounded-lg border cursor-pointer transition-colors duration-300 relative ${
+                onMouseEnter={() => activeTab === index && setIsHovered(true)}
+                onMouseLeave={() => activeTab === index && setIsHovered(false)}
+                className={`p-5 rounded-md border cursor-pointer transition-colors duration-300 relative ${
                   activeTab === index
-                    ? " bg-[#f8f8f8]"
-                    : "border-gray-100 bg-white "
+                    ? "border-gray-300 bg-[#f8f8f8] shadow-[0_0_15px_rgba(156,156,156,0.5)] shadow-[#9c9c9c]"
+                    : "border-gray-200 bg-white opacity-50"
                 }`}
               >
                 <h3 className="text-md font-semibold text-gray-900">
@@ -130,7 +156,7 @@ const agent = new Agent({
             ))}
           </div>
           <div className="md:col-span-8">
-            <div className="bg-black h-full rounded-lg p-4 font-mono text-sm">
+            <div className="bg-black h-full rounded-md p-4 font-mono text-sm shadow-lg shadow-foreground/50">
               <div className="flex items-center mb-4 space-x-2 bg-[#2d2d2d] px-6 py-3 rounded-t-lg -mt-4 -mx-4">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
