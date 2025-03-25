@@ -81,14 +81,14 @@ Command:  del file1.txt`,
     `$ show last 2 commits
 ? Do you want to run the command 'git log -n 2'? Yes
 Command: git log -n 2
-commit b8299077fe7e17addf354d541eb71b0e2bc8ed92
-Author: unknown <kirtirathi282@gmail.com>
+commit b8299077fe7e17addf354
+Author: unknown <example@gmail.com>
 Date:   Sun Mar 23 20:50:25 2025 +0530
 
 Refactor Navbar and Hero components
 
-commit 98c0b28c972d7cba7600554e5cd0ddf112b65be1
-Author: unknown <kirtirathi282@gmail.com>
+commit 98c0b28c972d7cba7
+Author: unknown <example@gmail.com>
 Date:   Sat Mar 22 21:06:43 2025 +0530
 
 Refactor CSS and UI components +  minor visual adjustments`,
@@ -121,8 +121,8 @@ print("File renaming completed!")' > rename.py'? Yes`,
             PromptShell in Action
           </h2>
           <p className="text-gray-400">
-            See how PromptShell makes your development tasks easier with
-            AI-powered commands
+            See how PromptShell makes your CLI tasks easier with AI-powered
+            commands
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
