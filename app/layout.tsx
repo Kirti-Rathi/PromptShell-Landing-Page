@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Image from "next/image";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,15 +30,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="fixed top-4 left-4 z-50">
-          <Image
-            src="/logo.svg"
-            alt="PromptShell Logo"
-            width={32}
-            height={32}
-            priority
-          />
-        </div>
         {children}
       </body>
     </html>
