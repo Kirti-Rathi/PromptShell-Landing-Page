@@ -25,7 +25,7 @@ import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import { LineShadowText } from "../magicui/line-shadow-text";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy, MoveRight } from "lucide-react";
 import { TypingAnimation } from "../magicui/typing-animation";
 
 export const MacbookScroll = ({
@@ -112,36 +112,35 @@ export const MacbookScroll = ({
           <LineShadowText className="italic">Assistant</LineShadowText>
           <TypingAnimation
             duration={70}
-            className="text-2xl text-foreground/40 font-thin mt-4 block"
+            className="text-2xl text-foreground/50 font-thin mt-4 block"
           >
-            Making Command-Line Tasks Effortless and Secure!
+            making command-line operations effortless, intelligent, and secure!
           </TypingAnimation>
         </span>
       </motion.h2>
 
       {/* Script Copy Button */}
-      <motion.div
-        style={{
-          translateY: textTransform,
-          opacity: textOpacity,
-        }}
-        whileHover={{ y: -7, transition: { duration: 0.3 } }}
-        className="px-4 py-3 font-mono mt-10 mb-25 bg-foreground text-background w-sm text-sm border rounded-lg relative animate-glow"
-      >
-        <div className="flex items-start">
-          <span className="text-[#27c93f] mr-2">$</span>
-          pip install promptshell
+      <motion.div className="flex gap-2 items-center px-4 py-3 font-mono mt-6 mb-20">
+        <div className="bg-foreground text-background w-sm text-sm border rounded-lg relative  px-4 py-3">
+          <div className="flex items-start">
+            <span className="text-[#27c93f] mr-2">$</span>
+            pip install promptshell
+          </div>
+          <button
+            onClick={() => copyToClipboard("pip install promptshell")}
+            className="cursor-pointer text-gray-400 hover:text-white rounded transition-colors absolute top-1/2 -translate-y-1/2 right-4"
+            aria-label={installCopied ? "Copied" : "Copy to clipboard"}
+          >
+            {installCopied ? (
+              <Check className="w-5 h-5" />
+            ) : (
+              <Copy className="w-5 h-5" />
+            )}
+          </button>
         </div>
-        <button
-          onClick={() => copyToClipboard("pip install promptshell")}
-          className="cursor-pointer text-gray-400 hover:text-white rounded transition-colors absolute top-1/2 -translate-y-1/2 right-4"
-          aria-label={installCopied ? "Copied" : "Copy to clipboard"}
-        >
-          {installCopied ? (
-            <Check className="w-5 h-5" />
-          ) : (
-            <Copy className="w-5 h-5" />
-          )}
+        <button className="px-3 py-3 text-sm border border-gray-200 rounded-lg flex items-center gap-2 hover:bg-foreground hover:text-background transition-colors">
+          <MoveRight className="w-5 h-5" />
+          Get Started
         </button>
       </motion.div>
 
@@ -154,21 +153,21 @@ export const MacbookScroll = ({
         className="flex justify-center items-center gap-6 mb-20"
       >
         <Image
-          src="/platform-icons/windows-modified.png"
+          src="/platform-icons/windows.png"
           alt="Windows"
           width={120}
           height={120}
           className="text-gray-400 hover:text-white transition-colors"
         />
         <Image
-          src="/platform-icons/linux-modified.png"
+          src="/platform-icons/linux.png"
           alt="Linux"
           width={80}
           height={80}
           className="text-gray-400 hover:text-white transition-colors"
         />
         <Image
-          src="/platform-icons/macos-modified.png"
+          src="/platform-icons/macos.png"
           alt="macOS"
           width={50}
           height={50}

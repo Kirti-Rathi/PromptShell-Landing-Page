@@ -50,7 +50,13 @@ export default function CTA() {
             </svg>
             Star on GitHub
           </a> */}
-          <EncryptButton text="star on github" />
+          <Link
+            target="_blank"
+            href="https://github.com/Kirti-Rathi/PromptShell"
+          >
+            <EncryptButton text="Star on GitHub" />
+          </Link>
+          {/* <EncryptButton text="star on github" /> */}
         </div>
       </div>
     </CardSpotlight>

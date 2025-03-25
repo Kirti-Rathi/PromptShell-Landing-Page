@@ -51,7 +51,7 @@ const EncryptButton = ({ text }: EncryptButtonProps) => {
       }}
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
-      className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-background px-4 py-1 font-mono uppercase text-foreground text-sm transition-colors hover:text-[rgb(25,146,13)]"
+      className="group relative cursor-pointer overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-background px-4 py-1 font-mono uppercase text-foreground text-sm transition-colors hover:text-[rgb(25,146,13)]"
     >
       <div className="relative z-10 flex items-center gap-2">
         <svg

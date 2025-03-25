@@ -56,7 +56,7 @@ const Navbar = () => {
           </Link>
           <LinkPreview
             url="https://github.com/Kirti-Rathi/PromptShell"
-            className=" bg-foreground text-background hover:bg-foreground/90 px-4 py-2 rounded-lg flex items-center gap-2 transition-colors justify-center w-full lg:w-auto"
+            className=" bg-foreground text-background hover:bg-foreground/90 px-3 py-1.5 rounded-lg flex items-center gap-2 transition-colors justify-center w-full lg:w-auto"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
