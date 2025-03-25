@@ -11,8 +11,6 @@ import Features from "./components/Features";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
-// import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-
 export default function Home() {
   return (
     <div>

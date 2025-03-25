@@ -25,10 +25,6 @@ export default function Platform() {
 
   return (
     <div className="relative mt-24 flex w-full flex-col items-center justify-center overflow-hidden">
-      {/* <p className="text-gray-400 text-xl text-center mb-4">
-        Seamlessly integrates with all major operating systems, providing a
-        consistent experience across platforms
-      </p> */}
       <Marquee className="[--duration:5s]" pauseOnHover>
         {platforms.map((platform, index) => (
           <div

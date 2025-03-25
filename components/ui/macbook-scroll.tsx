@@ -23,7 +23,6 @@ import { IconWorld } from "@tabler/icons-react";
 import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
-import Image from "next/image";
 import { LineShadowText } from "../magicui/line-shadow-text";
 import { Check, Copy, MoveRight } from "lucide-react";
 import { TypingAnimation } from "../magicui/typing-animation";
@@ -121,7 +120,7 @@ export const MacbookScroll = ({
 
       {/* Script Copy Button */}
       <motion.div className="flex gap-2 items-center px-4 py-3 font-mono mt-6 mb-20">
-        <div className="bg-foreground text-background w-sm text-sm border rounded-lg relative  px-4 py-3">
+        <div className="bg-foreground text-background w-sm text-sm border rounded-lg relative shadow-lg px-4 py-3">
           <div className="flex items-start">
             <span className="text-[#27c93f] mr-2">$</span>
             pip install promptshell
@@ -138,10 +137,18 @@ export const MacbookScroll = ({
             )}
           </button>
         </div>
-        <button className="px-3 py-3 text-sm border border-gray-200 rounded-lg flex items-center gap-2 hover:bg-foreground hover:text-background transition-colors">
-          <MoveRight className="w-5 h-5" />
-          Get Started
-        </button>
+        <a
+          href="https://github.com/Kirti-Rathi/promptshell"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group px-3 py-3 text-sm shadow-lg border border-gray-200 rounded-lg flex items-center gap-2 relative overflow-hidden transition-colors"
+        >
+          <div className="absolute inset-0 bg-foreground transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+          <span className="relative z-10 group-hover:text-background transition-colors">
+            Get Started
+          </span>
+          <MoveRight className="w-5 h-5 relative z-10 group-hover:text-background transition-all duration-300 transform group-hover:translate-x-1" />
+        </a>
       </motion.div>
 
       {/* Platform Icons */}
@@ -263,10 +270,13 @@ export const Lid = ({
         className="h-94 w-[32rem] absolute inset-0 bg-[#010101] rounded-2xl p-2"
       >
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
-        <Image
+        <video
           src={src as string}
-          alt="aceternity logo"
-          fill
+          // autoPlay
+          muted
+          // loop
+          controls
+          playsInline
           className="object-cover object-left-top absolute rounded-lg inset-0 h-full w-full"
         />
       </motion.div>
@@ -740,24 +750,3 @@ export const OptionKey = ({ className }: { className: string }) => {
     </svg>
   );
 };
-
-// const AceternityLogo = () => {
-//   return (
-//     <svg
-//       width="66"
-//       height="65"
-//       viewBox="0 0 66 65"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//       className="h-3 w-3 text-white"
-//     >
-//       <path
-//         d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
-//         stroke="currentColor"
-//         strokeWidth="15"
-//         strokeMiterlimit="3.86874"
-//         strokeLinecap="round"
-//       />
-//     </svg>
-//   );
-// };

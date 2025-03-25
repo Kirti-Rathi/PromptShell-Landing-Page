@@ -44,13 +44,13 @@ const Navbar = () => {
         >
           <Link
             href="/#installation"
-            className="transition-colors w-full lg:w-auto text-center relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-current/40"
+            className="transition-colors w-full lg:w-auto text-center relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-current/40"
           >
             Installation
           </Link>
           <Link
             href="/#features"
-            className="transition-colors w-full lg:w-auto text-center relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-current/40"
+            className="transition-colors w-full lg:w-auto text-center relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-current/40"
           >
             Features
           </Link>
