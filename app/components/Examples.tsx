@@ -30,24 +30,17 @@ const Examples = () => {
 
   const features = [
     {
-      title: "Natural Language Commands",
-      description: "Create a basic AI agent workflow with multiple agents.",
+      title: "Natural Language Commands Simplifying Complex Workflows",
     },
     {
       title: "Ask Questions, Run Commands Directly and Ensure Secure Execution",
-      description:
-        "Set up multiple AI agents to work together on a complex task.",
     },
     {
       title: "Seamless Integration with Git, Docker, and Developer Tools",
-      description:
-        "Integrate external tools and APIs into an AI agent workflow.",
     },
     {
       title:
         "Generate Code Snippets Using Prompts and Save Directly to Desired Locations",
-      description:
-        "Design a specialized AI agent with custom decision-making logic.",
     },
   ];
 
@@ -145,7 +138,6 @@ print("File renaming completed!")' > rename.py'? Yes`,
                 <h3 className="text-md font-semibold text-gray-900">
                   {feature.title}
                 </h3>
-                {/* <p className="text-gray-600">{feature.description}</p> */}
                 {activeTab === index && (
                   <div
                     className="absolute bottom-0 left-0 h-1 bg-[#9c9c9c] transition-all duration-30"

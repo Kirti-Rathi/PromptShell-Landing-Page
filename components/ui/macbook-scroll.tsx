@@ -109,11 +109,14 @@ export const MacbookScroll = ({
           <LineShadowText className="italic">Smart</LineShadowText>{" "}
           <LineShadowText className="italic">Terminal</LineShadowText>{" "}
           <LineShadowText className="italic">Assistant</LineShadowText>
+          <span className="text-2xl text-foreground/50 font-light mt-4 block">
+            Translates plain english text into precise shell commands
+          </span>
           <TypingAnimation
             duration={70}
-            className="text-2xl text-foreground/50 font-thin mt-4 block"
+            className="text-xl italic text-foreground/50 font-thin mt-2 block"
           >
-            making command-line operations effortless, intelligent, and secure!
+            No more Alt + Tab gymnastics between Terminal and ChatGPT!
           </TypingAnimation>
         </span>
       </motion.h2>
